@@ -22,3 +22,10 @@ yarn lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
+## Images from Unsplash
+Photo by Nathalie SPEHNER on Unsplash
+
+## Color Palette
+https://colorhunt.co/palette/179675
