@@ -105,6 +105,14 @@
                     margin: 10% 0;
                 }
             }
+
+            .point:hover{
+                .point-icon{
+                    span{
+                    color: rgba(221, 160, 221, 1);
+                    }
+                }
+            }
         }
     } 
 }
