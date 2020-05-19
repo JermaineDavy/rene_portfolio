@@ -1,12 +1,16 @@
 <template>
     <footer>
         <section class="footer-info">
-            ads
+            
         </section>
 
         <section class="copyright">
             <p>Copyright 2020 - <a href="https://github.com/JermaineDavy/rene_portfolio" target="_blank">Jermaine Davy</a>. All rights Reserved.</p>
         </section>
+
+        <a href="#top" class="floating-button">
+            <i class="fas fa-arrow-up"></i>
+        </a>
     </footer>
 </template>
 
@@ -41,6 +45,27 @@ footer{
                 color: #ffbcbc;
             }
         }
+    }
+}
+
+.floating-button{
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: rgba(221, 160, 221, 1);
+    color: white;
+    font-size: 30px;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+
+    &:hover{
+        background-color: rgb(255, 116, 255);
     }
 }
 
