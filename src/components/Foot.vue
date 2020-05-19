@@ -5,7 +5,7 @@
         </section>
 
         <section class="copyright">
-            <p>Copyright 2020 - Jermaine Davy. All rights Reserved.</p>
+            <p>Copyright 2020 - <a href="https://github.com/JermaineDavy/rene_portfolio" target="_blank">Jermaine Davy</a>. All rights Reserved.</p>
         </section>
     </footer>
 </template>
@@ -30,6 +30,17 @@ footer{
         display: flex;
         align-items: center;
         justify-content: center;
+
+        p{
+            a, a:visited{
+                color: #fd9999;
+                text-decoration: none;
+            }
+
+            a:hover{
+                color: #ffbcbc;
+            }
+        }
     }
 }
 

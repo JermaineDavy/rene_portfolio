@@ -3,7 +3,13 @@
         <img src="/images/undraw_quality_time_wiyl.svg" alt="">
 
         <div class="hero-message">
-            Welcome to my place.
+            <div class="quote">
+                Whatever you do, do it well.
+            </div>
+
+            <div class="quote-from">
+                - Walt Disney
+            </div>
         </div>
     </section>
 </template>
@@ -24,29 +30,46 @@
 
     img{
         height: 70%;
-        margin: 150px 0 0 150px;
+        width:35%;
+        margin: 150px 0 0 120px;
         transform: rotate(5deg);
+        animation: hero-image-fade 2.4s;
     }
 
     .hero-message{
-        font-size: 6em;
         color: whitesmoke;
         text-align: center;
         transform: rotate(5deg);
-        margin: 285px 0 0 60px;
+        margin: 285px 0 0px 0px;
+        width: 35%;
+        display: flex;
+        flex-direction: column;
+        animation: hero-message-fade 4s;
+
+        .quote{
+            font-size: 5em;
+        }
+
+        .quote-from{
+            font-size: 3em;
+            text-align: right;
+        }
     }
 }
 
+
+
 @media screen and (max-width: 768px){
     .hero{
-        height: 80vh;
+        height: 70vh;
 
         img{
             display: none;
         }
 
         .hero-message{
-            font-size: 2.4em;
+            width: 100%;
+            font-size: 0.6em;
             margin: 0;
             display: flex;
             justify-content: center;
@@ -55,4 +78,26 @@
     }
 }
 
+@keyframes hero-image-fade {
+    from{
+        opacity: 0.1;
+        margin-left: -1000px;
+        margin-top:-450px;
+    }
+
+    to{
+        opacity: 1;
+        margin: 150px 0 0 120px;
+    }
+}
+
+@keyframes hero-message-fade{
+    from{
+        opacity: 0;
+    }
+
+    to{
+        opacity: 1;
+    }
+}
 </style>

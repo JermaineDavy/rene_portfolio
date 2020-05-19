@@ -15,7 +15,7 @@
             </div>
 
             <div class="slide-dots">
-                <span class="slide-dot" v-for="(slide, index) in slides" :key="index" @click="selectSlide(index)"></span>
+                <span v-for="(slide, index) in slides" :key="index" @click="selectSlide(index)" v-bind:class="[(index == (currentSlide-1)) ? 'slide-dot active-dot': 'slide-dot']"></span>
             </div>
         </div>
     </section>
@@ -35,12 +35,12 @@ export default {
                 {
                     id: 2,
                     image: '/images/undraw_male_avatar_323b.svg',
-                    caption: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lectus magna fringilla urna porttitor rhoncus dolor purus non enim.'
+                    caption: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Gravida neque convallis a cras semper. Nisl condimentum id venenatis a condimentum vitae sapien.'
                 },
                 {
                     id: 3,
                     image: '/images/undraw_female_avatar_w3jk.svg',
-                    caption: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lectus magna fringilla urna porttitor rhoncus dolor purus non enim.'
+                    caption: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Suscipit tellus mauris a diam maecenas sed. Commodo viverra maecenas accumsan lacus vel facilisis volutpat est velit.'
                 }
             ]
         };
@@ -69,6 +69,14 @@ export default {
 
         getSlideCaption(){
             return this.slides[this.currentSlide - 1].caption;
+        },
+
+        getSlideDotClass(index){
+            if(this.currentSlide == index){
+                return 'slide-dot active';
+            }
+
+            return 'slide-dot';
         }
     }
 }
@@ -164,6 +172,14 @@ export default {
 
     to{
         opacity: 1;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .testimonial-container{
+        .slide{
+            padding: 110px 0 110px 0;
+        }
     }
 }
 
