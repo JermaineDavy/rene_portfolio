@@ -1,18 +1,52 @@
 <template>
     <footer>
         <section class="footer-info">
-            
+            <!--
+                Be sure to add the following somewhere in the footer.
+
+                Designed by [Freepik](https://www.flaticon.com/search?author_id=1) from [FlatIcon](https://www.flaticon.com)
+
+                This is the designer attribution for the favicon
+            -->
         </section>
 
         <section class="copyright">
             <p>Copyright 2020 - <a href="https://github.com/JermaineDavy/rene_portfolio" target="_blank">Jermaine Davy</a>. All rights Reserved.</p>
         </section>
 
-        <a href="#top" class="floating-button">
+        <a href="#top" :class="floatingButtonClass">
             <i class="fas fa-arrow-up"></i>
         </a>
     </footer>
 </template>
+
+<script>
+export default {
+    data(){
+        return {
+            floatingButtonClass: 'floating-button'
+        };
+    },
+
+    methods: {
+        scrollHandler(){
+            if(window.scrollY > 175){
+                this.floatingButtonClass = 'floating-button show-floating-button';
+            }else{
+                this.floatingButtonClass = 'floating-button';
+            }
+        },
+    },
+
+    created(){
+        window.addEventListener('scroll', this.scrollHandler);
+    },
+
+    destroyed(){
+        window.removeEventListener('scroll', this.scrollHandler);
+    }
+}
+</script>
 
 <style lang="scss">
 $copyrightHeight: 80px;
@@ -59,7 +93,7 @@ footer{
     font-size: 30px;
     border: none;
     border-radius: 50%;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     text-decoration: none;
@@ -67,6 +101,10 @@ footer{
     &:hover{
         background-color: rgb(255, 116, 255);
     }
+}
+
+.show-floating-button{
+    display:flex;
 }
 
 </style>
