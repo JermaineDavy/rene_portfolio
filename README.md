@@ -30,3 +30,4 @@ Designed by [Freepik](https://www.flaticon.com/search?author_id=1) from [FlatIco
 
 ## Color Palette
 [Color Hunt - 179675](https://colorhunt.co/palette/179675)
+
